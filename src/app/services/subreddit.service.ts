@@ -12,7 +12,7 @@ export class SubredditService {
   constructor(private httpClient: HttpClient) { }
 
   getSubreddit(id:any): Observable<any> {
-    let API_URL = `${this.REST_API}/${id}.json`;
+    let API_URL = `${this.REST_API}/${id}.json?raw_json=1`;
 
     return this.httpClient.get(API_URL).pipe(map((res: any) => {
       return res || {}
