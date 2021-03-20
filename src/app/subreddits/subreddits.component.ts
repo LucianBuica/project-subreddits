@@ -31,7 +31,7 @@ export class SubredditsComponent{
   matcher = new MyErrorStateMatcher();
 
   constructor(private subreddit: SubredditService) {}
-
+  
   
   onSubmit(): void {
     // console.log("subredditFormControl: ", this.subredditFormControl);
@@ -39,10 +39,10 @@ export class SubredditsComponent{
       this.showLoader = true;
       this.subreddit.getSubreddit(this.subredditFormControl.value).subscribe(res => {
         let subreddits: any[] = res.data.children;
-        subreddits.sort(function (a, b) {
-          return b.data.ups - a.data.ups;
-        });
+        this.subreddit.sortArray(subreddits);
+
         subreddits = subreddits.splice(0,10);
+        
         this.Subreddits = subreddits;
         this.showLoader = false;
       });
