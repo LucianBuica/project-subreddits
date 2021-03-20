@@ -1,14 +1,8 @@
-.form-inline{
-    margin-top: 2em;
-}
-
-.list-group-item{
-    cursor: pointer;
-}
 
 .mat-card{
     margin-top: 20px;
 }
+
 
 .form-group{
     margin-left: 0 !important;
@@ -20,5 +14,13 @@ body{
 .loader{
     margin-top: 3em;
     padding-left: 50%;
+}
+
+.input-full-width{
+    width: 100%;
+}
+
+.my-form{
+    margin-top: 10px;
 }
 

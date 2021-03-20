@@ -1,16 +1,23 @@
 <div class="container">
-    <form class="form-inline" [formGroup]="form" (ngSubmit)="onSubmit()">
-        <div class="form-group mx-sm-3 mb-2">
-          <label for="subredditName" class="sr-only">Subreddit</label>
-          <input formControlName="subredditValue" type="text" class="form-control" id="subredditName" >
-        </div>
-        <button type="submit" color="primary" class="btn btn-primary mb-2">Submit</button>
-    </form>    
     
+    <form class="my-form" (ngSubmit)="onSubmit()">
+      <mat-form-field class="input-full-width">
+        <mat-label>Subreddit</mat-label>
+        <input #subredditName name="subredditName" type="text" matInput
+        [formControl]="subredditFormControl" 
+        autocomplete="off" 
+        [errorStateMatcher]="matcher">
+        <mat-error *ngIf="subredditFormControl.hasError('required')">
+          Subreddit is <strong>required</strong>
+        </mat-error>
+        
+      </mat-form-field>
+    </form>
+
     <div class="loader" *ngIf="showLoader">
       <mat-progress-spinner mode="indeterminate" diameter="30"></mat-progress-spinner>
     </div>
-    
+
 
     <mat-card *ngFor="let subreddit of Subreddits; let i = index">
         <mat-card-title>{{ subreddit.data.title }}</mat-card-title>
