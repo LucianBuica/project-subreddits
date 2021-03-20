@@ -1,0 +1,24 @@
+.form-inline{
+    margin-top: 2em;
+}
+
+.list-group-item{
+    cursor: pointer;
+}
+
+.mat-card{
+    margin-top: 20px;
+}
+
+.form-group{
+    margin-left: 0 !important;
+}
+
+body{
+    overflow: scroll;
+}
+.loader{
+    margin-top: 3em;
+    padding-left: 50%;
+}
+
