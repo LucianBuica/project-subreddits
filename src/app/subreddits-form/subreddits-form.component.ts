@@ -15,18 +15,18 @@ export class SubredditsFormComponent implements OnInit {
   selftext:boolean = false;
   showLoader:boolean = false;
 
-  @Output() messageEvent = new EventEmitter<any[]>();
-  
+  @Output() subredditEvent = new EventEmitter<any[]>();
+
   subredditFormControl = new FormControl(null ,
     Validators.required
   );
-  
   matcher = new MyErrorStateMatcher();
-
   constructor(private subreddit: SubredditService) {}
-
-  sendMessage(){
-    this.messageEvent.emit(this.Subreddits);
+  
+  
+  
+  sendSubreddits(){
+    this.subredditEvent.emit(this.Subreddits);
   }
 
   onSubmit(): void {
@@ -38,7 +38,7 @@ export class SubredditsFormComponent implements OnInit {
         this.subreddit.sortArray(subreddits);
         subreddits = subreddits.splice(0,10);
         this.Subreddits = subreddits;
-        this.sendMessage();
+        this.sendSubreddits();
         this.showLoader = false;
       });
     }

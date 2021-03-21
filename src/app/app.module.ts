@@ -10,7 +10,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 
@@ -45,7 +45,8 @@ import { SubredditsFormComponent } from './subreddits-form/subreddits-form.compo
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatGridListModule
   ],
   providers: [
     SubredditService

@@ -1,7 +1,7 @@
 <div class="container">
 
 
-  <app-subreddits-form (messageEvent)="receiveMessage($event)"></app-subreddits-form>
+  <app-subreddits-form (subredditEvent)="receiveSubreddits($event)"></app-subreddits-form>
 
   <mat-card *ngFor="let subreddit of Subreddits; let i = index">
     <mat-card-title>{{ subreddit.data.title }}</mat-card-title>

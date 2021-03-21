@@ -1,13 +1,20 @@
 <form class="my-form" (ngSubmit)="onSubmit()">
-    <mat-form-field class="input-full-width">
-        <mat-label>Subreddit</mat-label>
-        <input #subredditName name="subredditName" type="text" matInput [formControl]="subredditFormControl"
-            autocomplete="off" [errorStateMatcher]="matcher">
-        <mat-error *ngIf="subredditFormControl.hasError('required')">
-            Subreddit is <strong>required</strong>
-        </mat-error>
-
-    </mat-form-field>
+    <div class="row">
+        <div class="col-5">
+            <mat-form-field class="input-full-width">
+                <mat-label>Subreddit</mat-label>
+                <input #subredditName name="subredditName" type="text" matInput [formControl]="subredditFormControl"
+                    autocomplete="off" [errorStateMatcher]="matcher">
+                <mat-error *ngIf="subredditFormControl.hasError('required')">
+                    Subreddit is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+            
+        <div class="col-2 btnSubmit">
+            <button mat-raised-button color="primary" type="submit">Subimt</button>
+        </div>    
+    </div>
 </form>
 
 <div class="loader" *ngIf="showLoader">

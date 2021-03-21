@@ -14,7 +14,7 @@ export class SubredditsComponent{
   constructor(private subreddit: SubredditService) {}
   
 
-  receiveMessage($event: any[]){
+  receiveSubreddits($event: any[]){
     this.Subreddits = $event;
   }
 }
