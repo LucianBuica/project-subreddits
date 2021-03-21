@@ -22,12 +22,14 @@ import { SubredditService } from './services/subreddit.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SubredditsComponent } from './subreddits/subreddits.component';
+import { SubredditsFormComponent } from './subreddits-form/subreddits-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    SubredditsComponent
+    SubredditsComponent,
+    SubredditsFormComponent
   ],
   imports: [
     BrowserModule,

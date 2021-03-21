@@ -1,0 +1,15 @@
+<form class="my-form" (ngSubmit)="onSubmit()">
+    <mat-form-field class="input-full-width">
+        <mat-label>Subreddit</mat-label>
+        <input #subredditName name="subredditName" type="text" matInput [formControl]="subredditFormControl"
+            autocomplete="off" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="subredditFormControl.hasError('required')">
+            Subreddit is <strong>required</strong>
+        </mat-error>
+
+    </mat-form-field>
+</form>
+
+<div class="loader" *ngIf="showLoader">
+    <mat-progress-spinner mode="indeterminate" diameter="30"></mat-progress-spinner>
+</div>
